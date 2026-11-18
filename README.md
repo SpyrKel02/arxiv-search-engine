@@ -1,8 +1,5 @@
 # Scientific Publications Search Engine (arXiv Search Engine)
 
-Semester assignment for the **Information Retrieval – Search Engines** course (Academic Year 2026–2027).  
-Department of Information and Electronic Engineering – International Hellenic University (IHU).
-
 ## Technologies & Prerequisites
 * **Programming Language:** Java 21
 * **Indexing & Search Engine:** Apache Lucene 10.x
