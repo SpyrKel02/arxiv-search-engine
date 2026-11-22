@@ -27,7 +27,7 @@ public class StoredModule {
         File inputFolder = new File(pdfsDirectory);//δημιουργία αντικειμένου όπου αποθηκεύουμε το absolute path του arxiv_papers αρχείου
         File[] pdfFiles = inputFolder.listFiles((dir, name) -> name.endsWith(".pdf"));//αποθήκευση των αρχείων με κατάληξη pdf σε έναν πίνακα
         if(pdfFiles==null || pdfFiles.length==0){//έλεγχος αν το directory δεν περιλαμβάνει pdf αρχεία ή αν είναι άδειος
-            System.out.println("Δεν βρέθηκαν pdf αρχεία");
+            System.out.println("Δεν βρέθηκαν pdf αρχεία στον φάκελο"+inputFolder.getAbsolutePath());
             return;
         }
         Arrays.sort(pdfFiles, Comparator.comparing(File::getName));//ταξινόμηση αλφαβητικά
@@ -86,14 +86,8 @@ public class StoredModule {
                 }
             }
         }
-        System.out.println("==========================================");
-        System.out.println("Ολοκληρώθηκε το App 1 (Store Module)!");
-        System.out.println("Επιτυχή έγγραφα: " + processedPdfCount);
-        System.out.println("Αποτυχημένα/κατεστραμμένα PDF: " + errorPdfCount);
-        System.out.println("Δημιουργήθηκαν " + (fileIndex + 1) + " αρχεία Repository στον φάκελο " + repoDirectory);
 
         /* Επεξεργάστηκαν 10000 / 10000 PDF (Τρέχον αρχείο: repo_003.jsonl)...
-        ==========================================
         Ολοκληρώθηκε το App 1 (Store Module)!
         Επιτυχή έγγραφα: 10000
         Αποτυχημένα/κατεστραμμένα PDF: 0
