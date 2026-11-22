@@ -9,11 +9,11 @@
 
 ## System Architecture
 The system consists of 5 standalone applications:
-1. **App 1 – Store Module** *(Completed)*: Extracts plain text from 10,000 arXiv PDF papers and stores them sequentially in chunk files of up to 128 MB (`Repository`) in JSON Lines format.
-2. **App 2 – Text Preprocessor & Lucene Indexer** *(In Progress)*: Reads documents from the Repository, performs text preprocessing, and builds the inverted index (`Inverted Index`) using Apache Lucene.
-3. **App 3 – Query Server** *(Pending)*: Server process listening on a TCP socket that receives user queries and returns search results from the index.
-4. **App 4 – Query Client** *(Pending)*: Client process that sends JSON queries to the server and prints the retrieved results.
-5. **App 5 – Search Interface** *(Pending)*: Search user interface for submitting queries and displaying results.
+1. **App 1 – Store Module**: Extracts plain text from 10,000 arXiv PDF papers and stores them sequentially in chunk files of up to 128 MB (`Repository`) in JSON Lines format.
+2. **App 2 – Text Preprocessor & Lucene Indexer**: Reads documents from the Repository, performs text preprocessing, and builds the inverted index (`Inverted Index`) using Apache Lucene.
+3. **App 3 – Query Server**: Server process listening on a TCP socket that receives user queries and returns search results from the index.
+4. **App 4 – Query Client**: Client process that sends JSON queries to the server and prints the retrieved results.
+5. **App 5 – Search Interface**: Search user interface for submitting queries and displaying results.
 
 ## Project Structure
 ```text
