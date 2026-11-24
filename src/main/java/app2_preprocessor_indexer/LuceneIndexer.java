@@ -21,6 +21,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class LuceneIndexer {
+
     //εκκίνηση προεπεξεργασίας κειμένου μέσω διάφορων τεχνικών όπως Casefolding, punctuation removal, stopword removal, stemming
     //διαβάζει τα αρχεία/έγγραφα εισόδου format .jsonl από το data/repository
     //στην συνέχεια για κάθε έγγραφο δημιουργείται ένα αντικείμενο Lucene Document στην μνήμη
@@ -53,7 +54,7 @@ public class LuceneIndexer {
         Gson gson = new Gson();//χρήση Gson για ανάγνωση των jsonl αρχείων
         int indexCount = 0;
 
-        try(Directory indexDir = FSDirectory.open(Paths.get(invertIndexDirectory))){//σύνδεση με τον φάκελο data/lucene_inverted_index
+        try(Directory indexDir = FSDirectory.open(Paths.get(invertIndexDirectory))){//σύνδεση με το directory data/lucene_inverted_index
             Analyzer analyzer = new EnglishAnalyzer();//ορίζει τον τρόπο με τον οποίο θα αναλύεται το αγγλικό κείμενο πριν αποθηκευτεί
             IndexWriter writer = new IndexWriter(indexDir, new IndexWriterConfig(analyzer).setOpenMode(IndexWriterConfig.OpenMode.CREATE));
             for(File repoFile : repoFiles){//επανάληψη για όλα τα αρχεία στον φάκελο data/repository
