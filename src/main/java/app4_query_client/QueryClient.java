@@ -12,6 +12,12 @@ import java.util.Scanner;
 
 public class QueryClient {
 
+    //δημιουργία αντικειμένου Scanner όπου θα διαβάζει τα ερώτηματα του χρήστη μέσω της κονσόλας
+    //μετατροπή κάθε ερωτήματος σε αντικείμενο τύπου SearchRequest και έπειτα σε μορφή JSON
+    //έχει προηγηθεί σύνδεση σε TCP socket με τον Server(App 3-QueryServer) στην θύρα 9090 όπου δέχεται τα JSON ερωτήματα
+    //o Client(App 4-QueryClient) δέχεται την απάντηση από τον Server(App 3-QueryServer) και την εκτυπώνει στο stdout
+    //σε περίπτωση που σταλθεί στην κονσόλα η εντολή shutdown τότε κλείνουν ταυτόχρονα, Server και Client, ενώ με exit μόνο ο Client
+    
     private static final int server_port = 9090;
     private static final String server_host = "localhost";
 
