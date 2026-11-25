@@ -37,7 +37,7 @@ public class QueryClient {
             }
 
             boolean serverShutdown = sendUserInput(userInput,10);
-            if(serverShutdown){
+            if(serverShutdown){//έλεγχος για τον αν πληκτρολογήθηκε shutdown στην κονσόλα για να τερματιστεί ο client και η σύνδεση με τον server
                 break;
             }
         }
