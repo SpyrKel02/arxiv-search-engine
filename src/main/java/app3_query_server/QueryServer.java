@@ -84,7 +84,7 @@ public class QueryServer {
                     String rawQuery = request.getQuery() != null ? request.getQuery().trim() : "";//εξαγωγή κειμένου ερωτήματος
                     if(rawQuery.equalsIgnoreCase("shutdown") || rawQuery.equalsIgnoreCase("terminate")){
                         System.out.println("Λήφθηκε εντολή τερματισμού ("+rawQuery+"). Κλείσιμο server...");
-                        SearchResponse endResponse = new SearchResponse(0, Collections.emptyList(),rawQuery);
+                        SearchResponse endResponse = new SearchResponse(0, Collections.emptyList(),"SHUTDOWN");
                         output.println(gson.toJson(endResponse));
                         break;
                     }

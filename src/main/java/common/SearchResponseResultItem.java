@@ -6,6 +6,8 @@ public class SearchResponseResultItem {//κλάση για κάθε επιστη
     private double score;
     private String snippet;//σύντομο απόσπασμα κειμένου για εμφάνιση στην διεπαφή
 
+    public SearchResponseResultItem() {}
+
     public SearchResponseResultItem(String filename, String path, double score, String snippet) {
         this.filename = filename;
         this.path = path;

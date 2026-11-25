@@ -4,6 +4,8 @@ public class SearchRequest {//κλάση για το αίτημα αναζήτη
     private String query;//κείμενο αναζήτησης
     private int maxResults;//μέγιστος αριθμός αποτελεσμάτων
 
+    public SearchRequest() {}
+
     public SearchRequest(String query, int maxResults) {
         this.query = query;
         this.maxResults = maxResults;

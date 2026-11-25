@@ -7,6 +7,8 @@ public class SearchResponse {//κλάση για απάντηση του query s
     private List<SearchResponseResultItem> results;// λίστα με τα κορυφαία αποτελέσματα
     private String status;// κατάσταση απάντησης πχ ok,error,shutdown
 
+    public SearchResponse() {}
+
     public SearchResponse(long totalHits, List<SearchResponseResultItem> results, String status){
         this.totalHits = totalHits;
         this.results = results;
