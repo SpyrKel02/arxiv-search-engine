@@ -58,8 +58,10 @@ public class QueryClient {
 
         try(Socket socket = new Socket(server_host, server_port)){//σύνδεση στην θύρα 9090 στο local host
 
-            PrintWriter out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8 ),true);//υπεύθυνο για την ροή αποστολής
-            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream(),StandardCharsets.UTF_8));//υπεύθυνο για την ροή λήψης
+            PrintWriter out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream(), StandardCharsets.UTF_8 ),true);//υπεύθυνο για το κανάλι αποστολής δεδομένων από τον client προς τον server
+            // autoflush=true σημαίνει ότι τα δεδομένα φεύγουν αμέσως μέσα από το δίκτυο προς τον server
+            // ενώ το StandardCharsets.UTF_8 ξασφαλίζει ότι τα ελληνικά ή ειδικοί χαρακτήρες θα σταλούν σωστά
+            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream(),StandardCharsets.UTF_8));//υπεύθυνο για το κανάλι λήψης δεδομένων από τον server προς τον client
 
             out.println(request);
             String responseJson = in.readLine();
